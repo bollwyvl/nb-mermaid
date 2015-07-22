@@ -1,0 +1,20 @@
+{
+  "name": "nb-mermaid",
+  "version": "0.1.0",
+  "authors": [
+    "Nicholas Bollweg <nick.bollweg@gmail.com>"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "src",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mermaid": "~0.5.1"
+  }
+}

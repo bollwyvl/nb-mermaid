@@ -1,0 +1,10 @@
+\.ipynb_checkpoints
+__pycache__
+node_modules
+*.map
+*.egg-info/
+ipytangle.xunit.xml
+.coverage
+.eggs
+build/
+*.pyc

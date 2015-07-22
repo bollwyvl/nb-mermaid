@@ -1,0 +1,27 @@
+{
+  "author": {
+    "name": "Nicholas Bollweg",
+    "url": "https://github.com/bollwyvl"
+  },
+  "description": "",
+  "devDependencies": {
+    "coffee-script": "~1.9.2",
+    "less": "~2.5.0",
+    "watch": "~0.16.0",
+    "less-plugin-autoprefix": "~1.4.2"
+  },
+  "license": "BSD",
+  "main": "main.js",
+  "name": "nb-mermaid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bollwyvl/nb-mermaid.git"
+  },
+  "scripts": {
+    "coffee": "./node_modules/.bin/coffee -cw -o ./dist src/*.coffee",
+    "less": "./node_modules/.bin/lessc src/nb-mermaid.less dist/nb-mermaid.css  --autoprefix",
+    "watch-less": "./node_modules/.bin/watch 'npm run less' src",
+    "live": "./bin/npm_watch_multiple.sh watch-less coffee"
+  },
+  "version": "0.1.0"
+}
