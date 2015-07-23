@@ -2,11 +2,13 @@
 > Make [mermaid](https://github.com/knsv/mermaid) diagrams in your
 [Jupyter](http://jupyter.org) Notebook Markdown
 
+
 ## install
 ```shell
 git clone -b gh-pages https://github.com/bollwyvl/nb-mermaid.git \
-    ~/.ipython/nbextensions/
+    ~/.ipython/nbextensions/nb-mermaid
 ```
+
 
 ## activate
 In the notebook...
@@ -19,3 +21,5 @@ IPython.load_ipython_extensions(["nb-mermaid/nb-mermaid"]);
 ## roadmap
 - nbviewer support (bookmarklet works now!)
 - live editing (a la the [mermaid editor](http://knsv.github.io/mermaid/live_editor))
+- pan/zoom
+- search

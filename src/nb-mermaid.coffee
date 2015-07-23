@@ -22,7 +22,11 @@ define [
     initCSS: ->
       d3.select "head"
         .selectAll "link.mermaid_style"
-        .data ["mermaid.css", "mermaid.forest.css"].map @mmp
+        .data [
+          @mmp "mermaid.css"
+          @mmp "mermaid.forest.css"
+          "./nb-mermaid.css"
+        ]
         .enter()
         .append "link"
         .attr

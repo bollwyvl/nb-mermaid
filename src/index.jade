@@ -17,13 +17,13 @@ html(lang="en")
   body
     .container
       .two-thirds.column.centered
-        :markdown
+        :marked
           # nb-mermaid
           > Make [mermaid](https://github.com/knsv/mermaid) diagrams in your
           [Jupyter](http://jupyter.org) Notebook Markdown
 
       .one-half.column
-        :markdown
+        :marked
           ## test drive
         | drag this 
         a.btn.btn-primary.btn-sm(
@@ -33,12 +33,12 @@ html(lang="en")
         |  to your bookmark bar, and use live on 
         a(href="https://tmpnb.org") tmpnb.org
         |  ... or your own, local notebooks
-        :markdown
+        :marked
           ## install
           ```bash
             git clone -b gh-pages \
                 https://github.com/bollwyvl/nb-mermaid.git \
-                ~/.ipython/nbextensions/
+                ~/.ipython/nbextensions/nb-mermaid
           ```
           
           ## activate
