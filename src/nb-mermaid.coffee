@@ -1,11 +1,9 @@
 define [
   "require"
-  "jquery"
-  "underscore"
 ],
-(require, $, _) ->
-  mermaid = d3 = null
+(require) ->
 
+  mermaid = d3 = null
   class NotebookMermaid
     constructor: -> require [@toUrl @mmp "mermaid.min.js"], @initDeps
 
