@@ -2,7 +2,7 @@
 (function() {
   var bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-  define(["require", "jquery", "underscore"], function(require, $, _) {
+  define(["require"], function(require) {
     var NotebookMermaid, d3, init, mermaid;
     mermaid = d3 = null;
     NotebookMermaid = (function() {
@@ -28,7 +28,7 @@
       };
 
       NotebookMermaid.prototype.initCSS = function() {
-        return d3.select("head").selectAll("link.mermaid_style").data(["mermaid.css", "mermaid.forest.css"].map(this.mmp)).enter().append("link").attr({
+        return d3.select("head").selectAll("link.mermaid_style").data([this.mmp("mermaid.css"), this.mmp("mermaid.forest.css"), "./nb-mermaid.css"]).enter().append("link").attr({
           rel: "stylesheet",
           href: this.toUrl
         });
