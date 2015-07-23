@@ -8,7 +8,9 @@
     "coffee-script": "~1.9.2",
     "less": "~2.5.0",
     "watch": "~0.16.0",
-    "less-plugin-autoprefix": "~1.4.2"
+    "less-plugin-autoprefix": "~1.4.2",
+    "jade": "~1.11.0",
+    "marked": "~0.3.3"
   },
   "license": "BSD",
   "main": "main.js",
@@ -21,7 +23,8 @@
     "coffee": "./node_modules/.bin/coffee -cw -o ./dist src/*.coffee",
     "less": "./node_modules/.bin/lessc src/nb-mermaid.less dist/nb-mermaid.css  --autoprefix",
     "watch-less": "./node_modules/.bin/watch 'npm run less' src",
-    "live": "./bin/npm_watch_multiple.sh watch-less coffee"
+    "jade": "./node_modules/.bin/jade --watch src/*.jade -o dist",
+    "live": "./bin/npm_watch_multiple.sh watch-less coffee jade"
   },
   "version": "0.1.0"
 }

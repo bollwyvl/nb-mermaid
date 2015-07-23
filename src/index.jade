@@ -1,0 +1,69 @@
+doctype html
+html(lang="en")
+  head
+    title nb-mermaid — Mermaid diagrams in the Jupyter Notebook
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/g/primer")
+    link(rel="stylesheet", href="./lib/mermaid/dist/mermaid.css")
+    style.
+      * {
+        text-align: center
+      }
+      pre {
+        text-align: left;
+      }
+      .mermaid {
+        width: auto;
+      }
+  body
+    .container
+      .two-thirds.column.centered
+        :markdown
+          # nb-mermaid
+          > Make [mermaid](https://github.com/knsv/mermaid) diagrams in your
+          [Jupyter](http://jupyter.org) Notebook Markdown
+
+      .one-half.column
+        :markdown
+          ## test drive
+        | drag this 
+        a.btn.btn-primary.btn-sm(
+          role="button"
+          href="javascript:(function(){javascript%3Arequire%28%5B%22//bollwyvl.github.io/nb-mermaid/nb-mermaid.js%22%5D%2Cfunction%28m%29%7Bm%28%29%7D%29}());")
+          | nb-mermaid bookmarklet
+        |  to your bookmark bar, and use live on 
+        a(href="https://tmpnb.org") tmpnb.org
+        |  ... or your own, local notebooks
+        :markdown
+          ## install
+          ```bash
+            git clone -b gh-pages \
+                https://github.com/bollwyvl/nb-mermaid.git \
+                ~/.ipython/nbextensions/
+          ```
+          
+          ## activate
+          In the notebook...
+          ```javascript
+          %%javascript
+          IPython.load_ipython_extensions(["nb-mermaid/nb-mermaid"]);
+          ```
+
+          ## code
+          [GitHub Repo](https://github.com/bollwyvl/nb-mermaid)
+            
+          ## license
+          [BSD](https://github.com/bollwyvl/nb-mermaid/blob/master/LICENSE)
+      .one-half.column
+        .mermaid.
+          graph TD
+            here[this page] --> bookmarklet(use bookmarklet)
+            bookmarklet --> make
+            here --> clone
+            clone(clone from github) --> installed
+            clone --> fork(fork)
+            fork --> profit((profit))
+            make(make diagrams) --> profit
+            installed --> make
+
+    script(src="lib/mermaid/dist/mermaid.min.js")
+    script mermaid.init();
