@@ -24,15 +24,16 @@ if sys.version_info[0] < 3:
     setup_data["packages"] = [s.encode("utf-8")
                               for s in setup_data["packages"]]
 
-with open("README.rst") as f:
+with open("README.md") as f:
     setup_data.update(
         long_description=f.read()
     )
 
 setup_data.update(
     cmdclass=cmdclass(
-        path="{0}/static/{0}".format(
-            setup_data["packages"][0]
+        path="{}/static/{}".format(
+            setup_data["packages"][0],
+            setup_data["name"],
         )
     )
 )
