@@ -1,0 +1,40 @@
+{
+  "author": "Nicholas Bollweg",
+  "author_email": "nick.bollweg@gmail.com",
+  "classifiers": [
+    "Framework :: IPython",
+    "Natural Language :: English",
+    "Programming Language :: Python",
+    "Intended Audience :: Developers",
+    "Development Status :: 3 - Alpha",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 2",
+    "License :: OSI Approved :: BSD License",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+    "Topic :: Scientific/Engineering :: Visualization"
+  ],
+  "description": "Mermaid diagrams in the IPython Notebook",
+  "include_package_data": true,
+  "install_requires": [
+    "IPython>3.0,<4.0",
+    "jupyter-pip"
+  ],
+  "keywords": "IPython mermaid diagram",
+  "license": "BSD",
+  "name": "nb-mermaid",
+  "packages": [
+    "mermaid"
+  ],
+  "setup_requires": [
+    "IPython>3.0,<4.0",
+    "jupyter-pip"
+  ],
+  "tests_require": [
+    "nose",
+    "coverage"
+  ],
+  "test_suite": "nose.collector",
+  "url": "http://github.com/bollwyvl/nb-mermaid",
+  "version": "0.1.0"
+}
