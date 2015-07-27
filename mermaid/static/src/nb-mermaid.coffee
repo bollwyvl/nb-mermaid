@@ -1,15 +1,17 @@
 define [
-  "require"
+  "module"
 ],
-(require) ->
-
+(module) ->
+  # get the dereferenced module location
+  _dot = module.uri.replace /\/[^/]*$/, ""
+  
   mermaid = d3 = null
   class NotebookMermaid
     constructor: -> require [@toUrl @mmp "mermaid.min.js"], @initDeps
 
-    toUrl: (url) -> require.toUrl url
-
-    mmp: (f) -> "./lib/mermaid/dist/#{f}"
+    toUrl: (url) -> "#{_dot}/#{url}"
+    
+    mmp: (f) -> "lib/mermaid/dist/#{f}"
 
     initDeps: (_m) =>
       mermaid = _m
