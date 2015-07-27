@@ -2,8 +2,9 @@
 (function() {
   var bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-  define(["require"], function(require) {
-    var NotebookMermaid, d3, init, mermaid;
+  define(["module"], function(module) {
+    var NotebookMermaid, _dot, d3, init, mermaid;
+    _dot = module.uri.replace(/\/[^\/]*$/, "");
     mermaid = d3 = null;
     NotebookMermaid = (function() {
       function NotebookMermaid() {
@@ -13,11 +14,11 @@
       }
 
       NotebookMermaid.prototype.toUrl = function(url) {
-        return require.toUrl(url);
+        return _dot + "/" + url;
       };
 
       NotebookMermaid.prototype.mmp = function(f) {
-        return "./lib/mermaid/dist/" + f;
+        return "lib/mermaid/dist/" + f;
       };
 
       NotebookMermaid.prototype.initDeps = function(_m) {
