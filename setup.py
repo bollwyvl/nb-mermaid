@@ -24,7 +24,7 @@ if sys.version_info[0] < 3:
     setup_data["packages"] = [s.encode("utf-8")
                               for s in setup_data["packages"]]
 
-with open("README.md") as f:
+with open("README.rst") as f:
     setup_data.update(
         long_description=f.read()
     )

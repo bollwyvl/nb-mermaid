@@ -30,11 +30,6 @@
     "IPython>3.0,<4.0",
     "jupyter-pip"
   ],
-  "tests_require": [
-    "nose",
-    "coverage"
-  ],
-  "test_suite": "nose.collector",
   "url": "http://github.com/bollwyvl/nb-mermaid",
   "version": "0.1.0"
 }
