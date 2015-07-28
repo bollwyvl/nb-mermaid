@@ -5,22 +5,68 @@ html(lang="en")
     link(rel="stylesheet", href="https://cdn.jsdelivr.net/g/primer")
     link(rel="stylesheet", href="./lib/mermaid/dist/mermaid.css")
     style.
-      * {
-        text-align: center
-      }
       pre {
         text-align: left;
       }
       .mermaid {
         width: auto;
       }
+      .notebook {
+        padding: 15px 15px 15px 65px;
+        box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
+        text-align: left;
+        position: relative;
+      }
+      .notebook.code::before{
+        content: "In []:";
+        color: navy;
+        font-family: monospace;
+        position: absolute;
+        left: 15px;
+        padding-top: 2px;
+      }
+      .notebook.code pre {
+        border: 1px solid #cfcfcf;
+        border-radius: 2px;
+        background: #f7f7f7;
+        line-height: 1.21429em;
+        padding: 5px;
+      }
+      .cmdln {
+        background-color: #333;
+        color: #0f0;
+        border-radius: 2px;
+        padding: 5px;
+      }
+      .examples {
+        text-align: center;
+      }
   body
     .container
-      .two-thirds.column.centered
-        :marked
-          # nb-mermaid
-          > Make [mermaid](https://github.com/knsv/mermaid) diagrams in your
-          [Jupyter](http://jupyter.org) Notebook Markdown
+      .one-half.column
+        .notebook
+          :marked
+            # nb-mermaid
+            > Make [mermaid](https://github.com/knsv/mermaid) diagrams in your
+            [Jupyter](http://jupyter.org) Notebook Markdown
+          
+          .mermaid.
+            graph TD
+              here[this page] --> bookmarklet(use bookmarklet)
+              bookmarklet --> make
+              here --> pip(pip)
+              here --> clone
+              pip --> installed
+              clone(clone) --> installed
+              clone --> fork(fork)
+              fork --> profit((profit))
+              make(make diagrams) --> profit
+              installed --> make
+        p.examples
+          a.btn.btn-primary(
+            role="button"
+            href="http://nbviewer.ipython.org/github/bollwyvl/nb-mermaid/blob/master/notebooks"
+          ) see more examples
 
       .one-half.column
         :marked
@@ -30,44 +76,37 @@ html(lang="en")
           role="button"
           href="javascript:(function(){javascript%3Arequire%28%5B%22//bollwyvl.github.io/nb-mermaid/nb-mermaid.js%22%5D%2Cfunction%28m%29%7Bm%28%29%7D%29}());")
           | nb-mermaid bookmarklet
-        |  to your bookmark bar, and use live on 
+        |  to your bookmark bar, and click to use live on 
         a(href="https://tmpnb.org") tmpnb.org
         |  ... or your own, local notebooks
-        :marked
-          ## install
-          ```bash
+        h2 install (easy, IPython-integrated)
+        .cmdln: code: pre.
+            pip install nb-mermaid 
+        .notebook.code: code: pre.
+          %reload_ext mermaid
+        h2 install (less easy, Jupyter)
+        .cmdln
+          :marked
+            ```bash
             git clone -b gh-pages \
-                https://github.com/bollwyvl/nb-mermaid.git \
-                ~/.ipython/nbextensions/nb-mermaid
-          ```
-          
-          ## activate
-          In the notebook...
-          ```javascript
-          %%javascript
-          IPython.load_ipython_extensions(["nb-mermaid/nb-mermaid"]);
-          ```
-
+              https://github.com/bollwyvl/nb-mermaid.git \
+              ~/.ipython/nbextensions/nb-mermaid
+            ```
+        .notebook.code
+          :marked
+            ```javascript
+            %%javascript
+            IPython.load_ipython_extensions([
+              "nb-mermaid/nb-mermaid"
+            ]);
+            ```
+              
+        :marked
           ## code
           [GitHub Repo](https://github.com/bollwyvl/nb-mermaid)
             
           ## license
           [BSD](https://github.com/bollwyvl/nb-mermaid/blob/master/LICENSE)
-      .one-half.column
-        .mermaid.
-          graph TD
-            here[this page] --> bookmarklet(use bookmarklet)
-            bookmarklet --> make
-            here --> clone
-            clone(clone from github) --> installed
-            clone --> fork(fork)
-            fork --> profit((profit))
-            make(make diagrams) --> profit
-            installed --> make
-        a.btn.btn-outline(
-          role="button"
-          href="http://nbviewer.ipython.org/github/bollwyvl/nb-mermaid/blob/master/notebooks/Examples.ipynb"
-        ) more examples on nbviewer
 
     script(src="lib/mermaid/dist/mermaid.min.js")
     script mermaid.init();
