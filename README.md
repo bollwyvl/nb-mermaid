@@ -47,5 +47,6 @@ bower install
 ```
 Run coffee and less to generate the 
 ```
+npm install
 npm run build
 ```
