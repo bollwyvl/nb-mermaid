@@ -25,7 +25,12 @@ git clone -b gh-pages https://github.com/bollwyvl/nb-mermaid.git \
 In the notebook...
 ```javascript
 %%javascript
-IPython.load_ipython_extensions(["nb-mermaid/nb-mermaid"]);
+import notebook
+notebook.nbextensions.check_nbextension('nb-mermaid',user=True)
+require(['base/js/utils'],
+function(utils) {
+        utils.load_extensions('nb-mermaid/nb-mermaid');
+});
 ```
 
 
@@ -35,3 +40,12 @@ IPython.load_ipython_extensions(["nb-mermaid/nb-mermaid"]);
 - pan/zoom
 - search
 
+## Build assets
+Grab the Mermaid library
+```
+bower install
+```
+Run coffee and less to generate the 
+```
+npm run build
+```

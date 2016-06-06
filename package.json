@@ -5,13 +5,13 @@
   },
   "description": "",
   "devDependencies": {
-    "coffee-script": "~1.9.2",
-    "less": "~2.5.0",
-    "watch": "~0.16.0",
+    "coffee-script": "~1.10.0",
+    "less": "~2.7.0",
+    "watch": "~0.18.0",
     "less-plugin-autoprefix": "~1.4.2",
     "jade": "~1.11.0",
-    "marked": "~0.3.3",
-    "jstransformer-marked": "0.0.2"
+    "marked": "~0.3.5",
+    "jstransformer-marked": "1.0.0"
   },
   "license": "BSD",
   "main": "main.js",
@@ -21,11 +21,13 @@
     "url": "https://github.com/bollwyvl/nb-mermaid.git"
   },
   "scripts": {
+    "build": "npm run coffee_build && npm run less",
+    "coffee_build": "./node_modules/.bin/coffee -c -o ./mermaid/static/nb-mermaid ./mermaid/static/src/*.coffee",
     "coffee": "./node_modules/.bin/coffee -cw -o ./mermaid/static/nb-mermaid ./mermaid/static/src/*.coffee",
     "less": "./node_modules/.bin/lessc ./mermaid/static/src/nb-mermaid.less ./mermaid/static/nb-mermaid/nb-mermaid.css  --autoprefix",
     "watch-less": "./node_modules/.bin/watch 'npm run less' ./mermaid/static/src",
     "jade": "./node_modules/.bin/jade --watch ./mermaid/static/src/*.jade -o ./mermaid/static/nb-mermaid",
     "live": "./bin/npm_watch_multiple.sh watch-less coffee jade"
   },
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

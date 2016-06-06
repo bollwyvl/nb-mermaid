@@ -1,6 +1,6 @@
 {
   "name": "nb-mermaid",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "authors": [
     "Nicholas Bollweg <nick.bollweg@gmail.com>"
   ],
@@ -15,6 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "mermaid": "~0.5.1"
+    "mermaid": "~6.0.0"
   }
 }
