@@ -6,7 +6,7 @@ include *.txt
 include .bowerrc
 
 recursive-include . *.ipynb
-recursive-include mermaid/static/nb-mermaid *.*
+recursive-include nb-mermaid/static/nb-mermaid *.*
 
 recursive-exclude . __pycache__
 recursive-exclude . *.py[co]

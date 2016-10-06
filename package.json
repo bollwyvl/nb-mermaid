@@ -22,12 +22,12 @@
   },
   "scripts": {
     "build": "npm run coffee_build && npm run less",
-    "coffee_build": "./node_modules/.bin/coffee -c -o ./mermaid/static/nb-mermaid ./mermaid/static/src/*.coffee",
-    "coffee": "./node_modules/.bin/coffee -cw -o ./mermaid/static/nb-mermaid ./mermaid/static/src/*.coffee",
-    "less": "./node_modules/.bin/lessc ./mermaid/static/src/nb-mermaid.less ./mermaid/static/nb-mermaid/nb-mermaid.css  --autoprefix",
-    "watch-less": "./node_modules/.bin/watch 'npm run less' ./mermaid/static/src",
-    "jade": "./node_modules/.bin/jade --watch ./mermaid/static/src/*.jade -o ./mermaid/static/nb-mermaid",
+    "coffee_build": "./node_modules/.bin/coffee -c -o ./nb-mermaid/static/nb-mermaid ./nb-mermaid/static/src/*.coffee",
+    "coffee": "./node_modules/.bin/coffee -cw -o ./nb-mermaid/static/nb-mermaid ./nb-mermaid/static/src/*.coffee",
+    "less": "./node_modules/.bin/lessc ./nb-mermaid/static/src/nb-mermaid.less ./nb-mermaid/static/nb-mermaid/nb-mermaid.css  --autoprefix",
+    "watch-less": "./node_modules/.bin/watch 'npm run less' ./nb-mermaid/static/src",
+    "jade": "./node_modules/.bin/jade --watch ./nb-mermaid/static/src/*.jade -o ./nb-mermaid/static/nb-mermaid",
     "live": "./bin/npm_watch_multiple.sh watch-less coffee jade"
   },
-  "version": "0.1.1"
+  "version": "0.2.0"
 }
