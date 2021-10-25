@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en"><head><title>nb-mermaid — Mermaid diagrams in the Jupyter Notebook</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/g/primer"><link rel="stylesheet" href="./lib/mermaid/dist/mermaid.css"><style>pre {
+  text-align: left;
+}
+.mermaid {
+  width: auto;
+}
+.notebook {
+  padding: 15px 15px 15px 65px;
+  box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
+  text-align: left;
+  position: relative;
+}
+.notebook.code::before{
+  content: "In []:";
+  color: navy;
+  font-family: monospace;
+  position: absolute;
+  left: 15px;
+  padding-top: 2px;
+}
+.notebook.code pre {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+  padding: 5px;
+}
+.cmdln {
+  background-color: #333;
+  color: #0f0;
+  border-radius: 2px;
+  padding: 5px;
+}
+.examples {
+  text-align: center;
+}</style></head><body><div class="container"><div class="one-half column"><div class="notebook"><h1 id="nb-mermaid">nb-mermaid</h1>
+<blockquote>
+<p>Make <a href="https://github.com/knsv/mermaid">mermaid</a> diagrams in your
+<a href="http://jupyter.org">Jupyter</a> Notebook Markdown</p>
+</blockquote>
+<div class="mermaid">graph TD
+  here[this page] --> bookmarklet(use bookmarklet)
+  bookmarklet --> make
+  here --> pip(pip)
+  here --> clone
+  pip --> installed
+  clone(clone) --> installed
+  clone --> fork(fork)
+  fork --> profit((profit))
+  make(make diagrams) --> profit
+  installed --> make</div></div><p class="examples"><a role="button" href="http://nbviewer.ipython.org/github/bollwyvl/nb-mermaid/blob/master/notebooks" class="btn btn-primary">see more examples</a></p></div><div class="one-half column"><h2 id="test-drive">test drive</h2>
+drag this <a role="button" href="javascript:(function(){javascript%3Arequire%28%5B%22//bollwyvl.github.io/nb-mermaid/nb-mermaid.js%22%5D%2Cfunction%28m%29%7Bm%28%29%7D%29}());" class="btn btn-primary btn-sm">nb-mermaid bookmarklet</a> to your bookmark bar, and click to use live on <a href="https://tmpnb.org">tmpnb.org</a> ... or your own, local notebooks<h2>install (easy, IPython-integrated)</h2><div class="cmdln"><code><pre>pip install nb-mermaid </pre></code></div><div class="notebook code"><code><pre>%reload_ext mermaid</pre></code></div><h2>install (less easy, Jupyter)</h2><div class="cmdln"><pre><code class="lang-bash">git clone -b gh-pages \
+  https://github.com/bollwyvl/nb-mermaid.git \
+  ~/.ipython/nbextensions/nb-mermaid
+</code></pre>
+</div><div class="notebook code"><pre><code class="lang-javascript">%%javascript
+IPython.load_ipython_extensions([
+  &quot;nb-mermaid/nb-mermaid&quot;
+]);
+</code></pre>
+</div><h2 id="code">code</h2>
+<p><a href="https://github.com/bollwyvl/nb-mermaid">GitHub Repo</a></p>
+<h2 id="license">license</h2>
+<p><a href="https://github.com/bollwyvl/nb-mermaid/blob/master/LICENSE">BSD</a></p>
+</div></div><script src="lib/mermaid/dist/mermaid.min.js"></script><script>mermaid.init();</script></body></html>
