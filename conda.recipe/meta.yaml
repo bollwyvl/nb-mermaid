@@ -1,0 +1,31 @@
+package:
+  name: nb-mermaid
+  version: "0.2.0"
+
+source:
+  path: ../
+
+build:
+  string: "py{{ environ.get('PY_VER').replace('.', '') }}\
+          {% if environ.get('RISE_RELEASE') == '1' %}\
+            _{{ environ.get('RISE_BUILD_NUMBER', '0') }}\
+          {% else %}\
+            _{{ environ.get('GIT_BUILD_STR', 'GIT_STUB') }}{% endif %}"
+
+requirements:
+  build:
+    - python
+    - notebook >=4.2.0
+  run:
+    - python
+    - notebook >=4.2.0
+
+test:
+  requires:
+    - python
+    - notebook >=4.2.0
+
+about:
+  home: https://github.com/bollwyvl/nb-mermaid
+  license: BSD
+  license_file: LICENSE
